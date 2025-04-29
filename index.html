@@ -1,0 +1,927 @@
+<html>
+    <head>
+        <title>Simulador de preguntas de primer año EGB</title>
+        
+    <link rel="stylesheet" href="SIMULADOR1.css">
+    <title>Inicio de Sesión y Cuestionario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #cuestionario {
+            display: none; 
+        }
+    </style>
+
+</head>
+<body>
+    <script src="simm2.js"></script>
+    <div id="login">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" required><br><br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" required><br><br>
+        <button onclick="iniciarSesion()">Iniciar Sesión</button>
+        <p id="mensaje" style="color: red;"></p>
+    </div>
+
+
+    <div id="cuestionario">
+    </head>
+
+        <div id="questionnaire">
+            <div>
+                <title>Temporizadores Fijos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0; /* Eliminar márgenes predeterminados del body */
+            padding-bottom: 60px; /* Espacio para el temporizador inferior fijo */
+        }
+
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100; /* Asegura que esté por encima del contenido */
+        }
+
+        .fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #e9ecef;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 100; /* Asegura que esté por encima del contenido */
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        #timer-40min {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #d35400; /* Un color distintivo */
+        }
+
+        #timer-up {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #27ae60; /* Otro color distintivo */
+        }
+
+        .content {
+            padding: 20px;
+            margin-top: 70px; /* Espacio para el temporizador superior fijo */
+        }
+
+        .large-text {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="fixed-top">
+        Temporizador de 40 Minutos: <span id="timer-40min">40:00</span>
+    </div>
+
+  
+    <div class="fixed-bottom">
+        Temporizador Ascendente: <span id="timer-up">00:00:00</span>
+    </div>
+
+    <script>
+        const timer40MinElement = document.getElementById('timer-40min');
+        const timerUpElement = document.getElementById('timer-up');
+
+        let remainingTime = 40 * 60; // 40 minutos en segundos
+        let timer40MinInterval;
+
+        let elapsedTimeUp = 0;
+        let timerUpInterval;
+
+        function update40MinTimer() {
+            const minutes = Math.floor(remainingTime / 60);
+            const seconds = remainingTime % 60;
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            const formattedSeconds = String(seconds).padStart(2, '0');
+            timer40MinElement.textContent = `${formattedMinutes}:${formattedSeconds}`;
+
+            if (remainingTime <= 0) {
+                clearInterval(timer40MinInterval);
+                alert('¡Tiempo de 40 minutos finalizado!');
+                // Aquí podrías agregar la lógica para cuando el tiempo se agota
+            } else {
+                remainingTime--;
+            }
+        }
+
+        function updateUpTimer() {
+            const hours = Math.floor(elapsedTimeUp / 3600);
+            const minutes = Math.floor((elapsedTimeUp % 3600) / 60);
+            const seconds = elapsedTimeUp % 60;
+            const formattedHours = String(hours).padStart(2, '0');
+            const formattedMinutes = String(minutes).padStart(2, '0');
+            const formattedSeconds = String(seconds).padStart(2, '0');
+            timerUpElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+            elapsedTimeUp++;
+        }
+
+        // Iniciar el temporizador de 40 minutos al cargar la página
+        timer40MinInterval = setInterval(update40MinTimer, 1000);
+
+        // Iniciar el temporizador ascendente al cargar la página
+        timerUpInterval = setInterval(updateUpTimer, 1000);
+    </script>
+
+                
+
+
+      <center><h3>📝RELACIÓN LÓGICO MATEMÁTICA✍️</h3>
+        <h2>👉Instrucciones👈</h2>
+        <ol type="1">
+            <h4>❤ Lee detenidamente cada pregunta con atención<br>
+                ❤ Responde con claridad y precisión</h4></ol><br></center>
+    </body>  
+
+    <h1>1.¿Cuántas manzanas hay en la imagen?<br><br></id><h1></h1>
+    <img src="manzana.jpg" width="200"><br><br>
+    <div>
+      <input type="radio" id="paraleloA" name="paralelo" value="A" required>
+      <label for="paraleloA">1</label><br>
+      <input type="radio" id="paraleloB" name="paralelo" value="B" required>
+      <label for="paraleloB">4</label><br>
+      <input type="radio" id="paraleloB" name="paralelo" value="B" required>
+      <label for="paraleloB">3</label><br>
+      <input type="radio" id="paraleloB" name="paralelo" value="B" required>
+      <label for="paraleloB">5</label><br>
+    </div>
+
+    <h1>2. ¿Selecciona el número que corresponde antes y después del número indicado en la serie?</h1>
+    <img src="serie.png" width="200"><br><br>
+    <div>
+        <input type="checkbox" id="opcion1" name="grupo" value="4" onclick="contarSeleccion()">
+        <label for="opcion1">4</label><br>
+        <input type="checkbox" id="opcion2" name="grupo" value="7" onclick="contarSeleccion()">
+        <label for="opcion2">7</label><br>
+        <input type="checkbox" id="opcion3" name="grupo" value="0" onclick="contarSeleccion()">
+        <label for="opcion3">0</label><br>
+        <input type="checkbox" id="opcion4" name="grupo" value="11" onclick="contarSeleccion()">
+        <label for="opcion4">11</label><br>
+        <input type="checkbox" id="opcion5" name="grupo" value="2" onclick="contarSeleccion()">
+        <label for="opcion5">2</label><br>
+        <input type="checkbox" id="opcion6" name="grupo" value="7" onclick="contarSeleccion()">
+        <label for="opcion6">7</label><br>
+        <input type="checkbox" id="opcion7" name="grupo" value="10" onclick="contarSeleccion()">
+        <label for="opcion7">10</label><br>
+        <input type="checkbox" id="opcion8" name="grupo" value="1" onclick="contarSeleccion()">
+        <label for="opcion8">1</label><br>
+        <input type="checkbox" id="opcion9" name="grupo" value="2" onclick="contarSeleccion()">
+        <label for="opcion9">2</label><br>
+        <input type="checkbox" id="opcion10" name="grupo" value="16" onclick="contarSeleccion()">
+        <label for="opcion10">16</label><br>
+    </div>
+    
+
+        <h1>3.¿Observa la imagen y selecciona las figuras geometricas ?<br><br></id></h1>
+        <img src="fi.jpg" width="300"><br><br>
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="Círculo" onclick="contarSeleccion()">
+            <label for="opcion1">Círculo</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="Cuadrado" onclick="contarSeleccion()">
+            <label for="opcion2">Cuadrado</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="Rectángulo" onclick="contarSeleccion()">
+            <label for="opcion3">Rectángulo</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="Rombo" onclick="contarSeleccion()">
+            <label for="opcion4">Rombo</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="Triángulo" onclick="contarSeleccion()">
+            <label for="opcion5">Triángulo</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="Estrella" onclick="contarSeleccion()">
+            <label for="opcion6">Estrella</label><br>
+        </div>
+
+        <h1>4. ¿Selecciona la respuesta correcta? <br>Noción Alto-Bajo</h1>
+<img src="nocion.jpg" width="300"><br><br> 
+<h4>La Jirafa es de noción:</h4>
+<div>
+    <input type="radio" id="opcion1" name="grupo4" value="Alta" required>
+    <label for="opcion1">Alta</label><br>
+    <input type="radio" id="opcion2" name="grupo4" value="Baja" required>
+    <label for="opcion2">Baja</label><br>
+    <input type="radio" id="opcion3" name="grupo4" value="Media" required>
+    <label for="opcion3">Media</label><br>
+</div>
+
+<h1>6. ¿Cuál es el número más grande?</h1>
+<img src="num.jpg" width="300"><br><br> 
+<div>
+    <input type="radio" id="opcion4" name="grupo6" value="2" required>
+    <label for="opcion4">2</label><br>
+    <input type="radio" id="opcion5" name="grupo6" value="5" required>
+    <label for="opcion5">5</label><br>
+    <input type="radio" id="opcion6" name="grupo6" value="10" required>
+    <label for="opcion6">10</label><br>
+</div>
+
+<h1>7. ¿Cuántos dedos tiene una mano?</h1>
+<img src="mano.png" width="300"><br><br> 
+<div>
+    <input type="radio" id="opcion7" name="grupo7" value="5" required>
+    <label for="opcion7">5</label><br>
+    <input type="radio" id="opcion8" name="grupo7" value="10" required>
+    <label for="opcion8">10</label><br>
+</div>
+
+<h1>8. ¿Qué número viene antes del 10?</h1>
+<img src="diez1.png" width="300"><br><br> 
+<div>
+    <input type="radio" id="opcion9" name="grupo8" value="13" required>
+    <label for="opcion9">13</label><br>
+    <input type="radio" id="opcion10" name="grupo8" value="11" required>
+    <label for="opcion10">11</label><br>
+    <input type="radio" id="opcion11" name="grupo8" value="9" required>
+    <label for="opcion11">9</label><br>
+    <input type="radio" id="opcion12" name="grupo8" value="10" required>
+    <label for="opcion12">10</label><br>
+</div>
+<h1>9. ¿Qué animal vive en el agua?</h1>
+<img src="pez.png" width="100"><br><br> 
+<div>
+    <input type="radio" id="opcion13" name="grupo9" value="Vaca" required>
+    <label for="opcion13">Vaca</label><br>
+    <input type="radio" id="opcion14" name="grupo9" value="Pez" required>
+    <label for="opcion14">Pez</label><br>
+    <input type="radio" id="opcion15" name="grupo9" value="Tucan" required>
+    <label for="opcion15">Tucán</label><br>
+</div>
+<h1>10. ¿Qué animal tiene 4 patas y vive en una casa?</h1>
+<img src="patas.jpg" width="100"><br><br> 
+<div>
+    <input type="radio" id="opcion16" name="grupo10" value="Perro" required>
+    <label for="opcion16">Perro</label><br>
+    <input type="radio" id="opcion17" name="grupo10" value="Gallina" required>
+    <label for="opcion17">Gallina</label><br>
+    <input type="radio" id="opcion18" name="grupo10" value="Pez" required>
+    <label for="opcion18">Pez</label>
+
+       <center> <h3>📝EXPRESIÓN ORAL Y ESCRITA✍️</h3><br><br></center>
+
+        <h1>11.¿Selecciona las vocales con la que empieza segun la imagen?</h1>
+        <img src="vocales.jpg" width="100"><br><br> 
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">I</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">A</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">B</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">E</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+            <label for="opcion5">O</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+            <label for="opcion6">U</label><br>
+        </div>
+
+        <h1>12.¿Según la imagen los trazos son: ?</h1>
+        <img src="trazos.jpg" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion3" name="grupo1" value="A" required>
+            <label for="opcion3">Horizontal</label><br>
+            <input type="radio" id="opcion7" name="grupo2" value="B" required>
+            <label for="opcion7">Vertical</label><br>
+        </div>
+
+        <h1>13.¿De qué color es la camiseta?</h1>
+        <img src="Camiseta.webp" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion3" name="grupo1" value="A" required>
+            <label for="opcion3">Amarilla</label><br>
+            <input type="radio" id="opcion7" name="grupo2" value="B" required>
+            <label for="opcion7">Roja</label><br>
+        </div>
+       
+        <h1>14.¿Qué color es el sol ?</h1>
+        <img src="sol.png" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion3" name="grupo1" value="A" required>
+            <label for="opcion3">Azul</label><br>
+            <input type="radio" id="opcion7" name="grupo2" value="B" required>
+            <label for="opcion7">Amarillo</label><br>
+        </div>
+
+        <h1>15.¿Tienes hermanos o hermanas?</h1>
+        <img src="hermanos.jpg" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion3" name="grupo1" value="A" required>
+            <label for="opcion3">SI</label><br>
+    
+            <input type="radio" id="opcion7" name="grupo2" value="B" required>
+            <label for="opcion7">NO</label><br>
+        </div>
+
+        <h1>16. ¿Cuál es tu actividad favorita en el recreo?</h1>
+        <img src="amigos.avif" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion2" name="grupo1" value="Cuadrado" required>
+            <label for="opcion2">Jugar al fútbol</label><br>
+    
+            <input type="radio" id="opcion3" name="grupo1" value="Rectángulo" required>
+            <label for="opcion3">Correr</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="Rombo" required>
+            <label for="opcion4">Jugar con mis amigos</label><br>
+    
+            <input type="radio" id="opcion5" name="grupo2" value="Triángulo" required>
+            <label for="opcion5">Otro</label><br>
+        </div>
+        
+        <h1>17. ¿Los colores de la bandera del nuestro país es: ?</h1>
+        <img src="Bandera.webp" width="100"><br><br> 
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="Amarillo" onclick="contarSeleccion()">
+            <label for="opcion1">Amarillo</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="Celeste" onclick="contarSeleccion()">
+            <label for="opcion2">Celeste</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="Azul" onclick="contarSeleccion()">
+            <label for="opcion3">Azul</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="Rojo" onclick="contarSeleccion()">
+            <label for="opcion4">Rojo</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="Verde" onclick="contarSeleccion()">
+            <label for="opcion5">Verde</label><br>
+        </div>
+
+        <h1>18. ¿Qué colores representa la bandera de la UNIDAD EDUCATIVA "ELOY ALFARO"?</h1>
+        <img src="Eloy.jpg " width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion2" name="grupo1" value="Cuadrado" required>
+            <label for="opcion2">Amarillo</label><br>
+    
+            <input type="radio" id="opcion3" name="grupo1" value="Rectángulo" required>
+            <label for="opcion3">Blanco</label><br>
+            
+            <input type="radio" id="opcion4" name="grupo2" value="Rombo" required>
+            <label for="opcion4">Azul</label><br>
+    
+            <input type="radio" id="opcion5" name="grupo2" value="Triángulo" required>
+            <label for="opcion5">Rojo</label><br>
+        </div>
+
+        <h1>19.Obseva y selecciona si coincide con las sombras</h1>
+        <img src="frutas.jpg" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion2" name="grupo1" value="Cuadrado" required>
+            <label for="opcion2">SI</label><br>
+
+            <input type="radio" id="opcion5" name="grupo2" value="Triángulo" required>
+            <label for="opcion5">NO</label><br>
+        </div>
+
+        <h1>20.Selecciona la respuesta correcta </h1>
+        <h4>La abejita es de la musica:</h4>
+        <img src="abejita.jpg" width="100"><br><br> 
+        <div>
+            <input type="radio" id="opcion2" name="grupo1" value="Cuadrado" required>
+            <label for="opcion2">Abejita Maya</label><br>
+
+            <input type="radio" id="opcion5" name="grupo2" value="Triángulo" required>
+            <label for="opcion5">Abejita Chiquitita Plim Plim</label><br>
+        </div>
+      
+        <h3>📝IDENTIDAD Y AUTONOMÍA Y CONVIVENCIA✍️</h3><br><br>
+
+        <h1>21.¿Las partes del cuerpo humano son:?<br><br></id></h1>
+        <img src="CUE.webp" width="300"><br><br>
+        <div>                                                                  
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">Cabello</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">Ojos</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">Nariz</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">Brazos</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+            <label for="opcion5">Pies</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+            <label for="opcion6">Cabeza</label><br>
+            <input type="checkbox" id="opcion7" name="grupo1" value="G" onclick="contarSeleccion()">
+            <label for="opcion7">Manos</label><br>
+            <input type="checkbox" id="opcion8" name="grupo1" value="H" onclick="contarSeleccion()">
+            <label for="opcion8">Piernas</label><br>
+            <input type="checkbox" id="opcion9" name="grupo1" value="I" onclick="contarSeleccion()">
+            <label for="opcion9">Pecas</label><br>
+            <input type="checkbox" id="opcion10" name="grupo1" value="J" onclick="contarSeleccion()">
+            <label for="opcion10">Cuello</label><br>
+            <input type="checkbox" id="opcion11" name="grupo1" value="K" onclick="contarSeleccion()">
+            <label for="opcion11">Boca</label><br>
+            <input type="checkbox" id="opcion12" name="grupo1" value="L" onclick="contarSeleccion()">
+            <label for="opcion12">Orejas</label><br>
+        </div>
+
+        <h1>22.Los utliles escolares para primer año de basica son?<br><br></id></h1>
+        <img src="escolar.jpg" width="300"><br><br>
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">Corrector</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">Lápiz</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">Esferos</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">Colores</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+            <label for="opcion5">Borrador</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+            <label for="opcion6">Tiza Líquida</label><br>
+            <input type="checkbox" id="opcion7" name="grupo1" value="G" onclick="contarSeleccion()">
+            <label for="opcion7">Sacapuntas</label><br>
+            <input type="checkbox" id="opcion8" name="grupo1" value="H" onclick="contarSeleccion()">
+            <label for="opcion8">Cuadernos</label><br>
+            <input type="checkbox" id="opcion9" name="grupo1" value="I" onclick="contarSeleccion()">
+            <label for="opcion9">Mochila</label><br>
+            <input type="checkbox" id="opcion10" name="grupo1" value="J" onclick="contarSeleccion()">
+            <label for="opcion10">Plancha</label><br>
+        </div>
+
+            <h1>23.Selecciona las acciones correctas que debes tener dentro del aula<br><br></id></h1>
+        <img src="clase.jpg" width="300"><br><br>
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">Escuchar atentamente</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">Jugar en clase</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">Tener una actitud respetuosa</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">Pelear en clase</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+            <label for="opcion5">Cuidar el material escolar</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+            <label for="opcion6">Botar basura en el aula</label><br>
+            <input type="checkbox" id="opcion7" name="grupo1" value="G" onclick="contarSeleccion()">
+            <label for="opcion7">Mantener la limpieza</label><br>
+            <input type="checkbox" id="opcion8" name="grupo1" value="H" onclick="contarSeleccion()">
+            <label for="opcion8">Respetar el turno de palabra</label><br>
+        </div>
+
+        <h1>24.¿A qué genero perteneces?<br><br></id></h1>
+        <img src="genero.png" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Masculino</label><br>
+    
+            <input type="radio" id="opcion2" name="grupo2" value="B" required>
+            <label for="opcion2">Femenino</label><br>
+        </div>
+
+        <h1>25.Selecciona la comida saludable <br><br></id></h1>
+        <img src="comida.avif" width="300"><br><br>
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">Coca Cola</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">Manzana</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">Chocolates</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">Plátano</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+            <label for="opcion5">Brócoli</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+            <label for="opcion6">Lechuga</label><br>
+            <input type="checkbox" id="opcion7" name="grupo1" value="G" onclick="contarSeleccion()">
+            <label for="opcion7">Papas Fritas</label><br>
+            <input type="checkbox" id="opcion8" name="grupo1" value="H" onclick="contarSeleccion()">
+            <label for="opcion8">Fresas</label><br>
+        </div>
+
+        <h1>26.¿Qué significa ser responsable? <br><br></id></h1>
+        <img src="RESPON.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">No hacer nada</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Cumplir con tus deberes y obligaciones</label><br>
+
+            <input type="radio" id="opcion3" name="grupo1" value="C" required>
+            <label for="opcion3">Pedir que otros hagan todo por ti</label><br>
+        </div>
+
+        <h1>27.¿Qué es el respeto?<br><br></id></h1>
+        <img src="respeto.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Hacer lo que tú quieras sin importarte lo que los demás digan</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Tratar a las personas con amabilidad y consideración</label><br>
+
+            <input type="radio" id="opcion3" name="grupo1" value="C" required>
+            <label for="opcion3">No hablar con las personas</label><br>
+        </div>
+
+        <h1>28.¿Qué debes hacer si te caes y te lastimas?<br><br></id></h1>
+        <img src="caida.webp" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Quedarte en el suelo sin hacer nada</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Llamar a un adulto para que te ayude</label><br>
+
+            <input type="radio" id="opcion3" name="grupo1" value="C" required>
+            <label for="opcion3"> Ignorar el dolor</label><br>
+        </div>
+
+        <h1>29.¿Cómo debes comportarte en el aula?<br><br></id></h1>
+        <img src="clasee.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Escuchando y prestando atención</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Jugando todo el tiempo</label><br>
+
+            <input type="radio" id="opcion3" name="grupo1" value="C" required>
+            <label for="opcion3"> Gritando </label><br>
+        </div>
+
+        <h1>30.¿Cuáles son los útiles de aseo ?<br><br></id></h1>
+        <img src="aseo.jpg" width="300"><br><br>
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">Cepillo dental</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">Jabón de baño</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">Pelota</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">Shampoo</label><br>
+            <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+            <label for="opcion5">Oso</label><br>
+            <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+            <label for="opcion6">Toalla</label><br>
+        </div>
+
+        <h3>📝COMPRENSIÓN Y EXPRESIÓN ARTÍSTICA✍️</h3><br><br>
+
+        <h1>31.¿Qué técnica es:?<br><br></id></h1>
+        <img src="enrollado.png" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Arrugado</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Rasgado</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Trozado</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Enrollado</label><br>
+        </div>
+
+        <h1>32.¿Qué técnica de recortado es:?<br><br></id></h1>
+        <img src="recorte.JPG" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Triangular</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Rectangular</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Cuadrado</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Circular</label><br>
+        </div>
+
+        <h1>33.¿Qué técnica de coloreado es:?<br><br></id></h1>
+        <img src="coloreado.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Vertical</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Horizontal</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Circular</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+
+        <h1>34.¿Cuáles son algunos de los materiales que se pueden usar para pintar?<br><br></id></h1>
+        <img src="pintura.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Pinturas, pinceles y lápices</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Zapatos y ropa</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Comida y agua</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+
+        <h1>35.¿Qué forma tiene un círculo?<br><br></id></h1>
+        <img src="circ.png" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Rectangular</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Cuadrada</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Redonda</label><br>
+
+            <input type="radio" id="opcion5" name="grupo4" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+        
+        <h1>36. ¿Qué forma tiene un triángulo?<br><br></id></h1>
+        <img src="triangulo.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">De tres lados</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Cuadrada</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Redonda</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+
+        <h1>37.¿Cuál de estos es un ejemplo de una figura geométrica?<br><br></id></h1>
+        <img src="FIGURA.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Estrella</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Triángulo</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Sombra</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+        
+        <h1>38. ¿Qué puedes hacer con plastilina?<br><br></id></h1>
+        <img src="plas.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Hacer figuras y moldear</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Colorearla con crayones</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Comerla</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+
+        <h1>39. ¿Si haces un dibujo de un árbol, ¿de qué color serían las hojas?<br><br></id></h1>
+        <img src="arbol.webp" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">>Verde</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Azul</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Rojo</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+
+        <h1>40.¿Qué se usa para pegar las imagenes?<br><br></id></h1>
+        <img src="pegar.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Lapiz</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Goma</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Pintura</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Ninguno</label><br>
+        </div>
+
+        <h3>📝COMPRENSIÓN Y EXPRESIÓN ARTÍSTICA✍️</h3><br><br>
+
+        <h1>41.¿Los animales domesticos son:?<br><br></id></h1>
+        <img src="animales.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Perro</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Pez</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Gato</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Vaca</label><br>
+
+            <h1>42.¿Cuáles son las partes de la planta?<br><br></id></h1>
+            <img src="planta.jpg" width="300"><br><br>
+            <div>
+                <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+                <label for="opcion1">Hojas</label><br>
+                <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+                <label for="opcion2">Polen</label><br>
+                <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+                <label for="opcion3">Tallo</label><br>
+                <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+                <label for="opcion4">Raíz</label><br>    
+                <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+                <label for="opcion5">Flor</label><br>
+                <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+                    <label for="opcion6">Fruto</label><br>
+            </div>
+
+            <h1>43.Segun la imagen es:<br><br></id></h1>
+            <img src="noche.png" width="300"><br><br>
+    
+
+        <div>
+
+            <input type="radio" id="opcion 1" name="grupo1" value="A" required>
+            <label for="opcion1">Dia</label><br>
+                
+            <input type="radio" id="opcion2" name="grupo2" value="B" required>
+            <label for="opcion2">Noche</label><br>
+
+        </div>
+        
+        
+        <h1>44.Observe la imagen y selecciona la respuesta correcta<br><br></id></h1>
+        <img src="campo.jpg" width="300"><br><br>
+
+        <div>
+
+            <input type="radio" id="opcion 1" name="grupo1" value="A" required>
+            <label for="opcion1">Ciudad</label><br>
+                
+            <input type="radio" id="opcion2" name="grupo2" value="B" required>
+            <label for="opcion2">Campo</label><br>
+
+        </div>
+
+        <h1>45.Observe la imagen y diga de que tipo de vivienda corresponde<br><br></id></h1>
+        <img src="paja.avif" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Ladrillo</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Adobe</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Paja</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Madera</label><br>
+        </div>
+
+        <h1>46.Observe la imagen y diga de que tipo de vivienda corresponde<br><br></id></h1>
+        <img src="adobe.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Ladrillo</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Adobe</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Paja</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Madera</label><br>
+
+        </div>
+
+        <h1>47.Observe la imagen y diga de que tipo de vivienda corresponde<br><br></id></h1>
+        <img src="ladrillo.png" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Ladrillo</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Adobe</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Paja</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Madera</label><br>
+        </div>
+
+        <h1>48.Observe la imagen y diga de que tipo de vivienda corresponde<br><br></id></h1>
+        <img src="madera.jpg" width="300"><br><br>
+
+        <div>
+            <input type="radio" id="opcion1" name="grupo1" value="A" required>
+            <label for="opcion1">Ladrillo</label><br>
+
+            <input type="radio" id="opcion2" name="grupo1" value="B" required>
+            <label for="opcion2">Adobe</label><br>
+                
+            <input type="radio" id="opcion3" name="grupo2" value="C" required>
+            <label for="opcion3">Paja</label><br>
+
+            <input type="radio" id="opcion4" name="grupo2" value="D" required>
+            <label for="opcion4">Madera</label><br>
+        </div>
+
+        <h1>49.¿Cuáles son las partes de la casa?<br><br></id></h1>
+    <img src="casa.webp" width="200"><br><br>
+    <div>
+        <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+        <label for="opcion1">Dormitorio</label><br>
+        <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+        <label for="opcion2">Sala</label><br>
+        <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+        <label for="opcion3">Bicicleta</label><br>
+        <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+        <label for="opcion4">Garage</label><br>
+        <input type="checkbox" id="opcion5" name="grupo1" value="E" onclick="contarSeleccion()">
+        <label for="opcion5">Cocina</label><br>
+        <input type="checkbox" id="opcion6" name="grupo1" value="F" onclick="contarSeleccion()">
+        <label for="opcion6">Baño</label><br>
+        <input type="checkbox" id="opcion7" name="grupo1" value="G" onclick="contarSeleccion()">
+        <label for="opcion7">Comedor</label><br>
+        <input type="checkbox" id="opcion8" name="grupo1" value="H" onclick="contarSeleccion()">
+        <label for="opcion8">Zapatos</label><br>
+        <input type="checkbox" id="opcion9" name="grupo1" value="I" onclick="contarSeleccion()">
+        <label for="opcion9">Balcón</label><br>
+    </div>
+
+        <h1>50.Seleccione los colores correctos del semáforo<br><br></id></h1>
+        <img src="semaforo.avif" width="300"><br><br>
+        <div>
+            <input type="checkbox" id="opcion1" name="grupo1" value="A" onclick="contarSeleccion()">
+            <label for="opcion1">Rojo</label><br>
+            <input type="checkbox" id="opcion2" name="grupo1" value="B" onclick="contarSeleccion()">
+            <label for="opcion2">Azul</label><br>
+            <input type="checkbox" id="opcion3" name="grupo1" value="C" onclick="contarSeleccion()">
+            <label for="opcion3">Amarillo</label><br>
+            <input type="checkbox" id="opcion4" name="grupo1" value="D" onclick="contarSeleccion()">
+            <label for="opcion4">Verde</label><br>
+        </div>
+
+      <center> <button onclick="calcularPuntaje()">Calcular Puntaje</button></center>
+
+        <h2 id="resultado"></h2>
+</html>

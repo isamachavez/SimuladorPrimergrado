@@ -1,0 +1,245 @@
+
+body {
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+    background-image: url('Deyy.avif');
+
+    background-size: cover;
+
+}
+
+#login {
+
+    background-color: rgba(249, 103, 103, 0.9);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    max-width: 400px;
+
+    margin: 100px auto;
+
+    text-align: center;
+
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+#login label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#login input[type="text"],
+#login input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #f987e2;
+    border-radius: 5px;
+    width: 200px;
+}
+
+#login button {
+    background-color: #007bff; /* Un color llamativo para el botón */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#login button:hover {
+    background-color: #0056b3;
+}
+
+#mensaje {
+    margin-top: 10px;
+}
+
+#cuestionario {
+
+    display: none; 
+
+    background-color: rgba(144, 249, 203, 0.9);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    max-width: 800px;
+
+    margin: 20px auto;
+
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+#cuestionario h1,
+#cuestionario h2,
+#cuestionario h3,
+#cuestionario h4 {
+    color: #ca2323; /* Un color vibrante para los títulos */
+}
+
+#cuestionario ol {
+    padding-left: 20px;
+}
+
+#cuestionario li h4 {
+    color: #dc3545; /* Otro color llamativo para los puntos importantes */
+}
+
+#cuestionario img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#cuestionario div {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+#cuestionario label {
+    margin-left: 5px;
+}
+
+#cuestionario input[type="radio"],
+#cuestionario input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Estilos para el temporizador */
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.timer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#timer {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.progress-bar-container {
+    width: 300px;
+    height: 20px;
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* Estilos para el resto de la página */
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    background: url('hola.jpg') no-repeat center center fixed;
+
+    background-size: cover;
+
+}
+
+
+#login {
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+    max-width: 400px;
+
+    margin: 100px auto;
+
+    text-align: center;
+
+    animation: fadeIn 1s ease-in-out;
+
+}
+
+
+h1, h2, h3 {
+
+    color: #264653;
+
+}
+
+
+input[type="text"], input[type="password"] {
+
+    margin: 10px 0;
+
+    padding: 10px;
+
+    border: 2px solid #e9c46a;
+
+    border-radius: 5px;
+
+    width: calc(100% - 22px);
+
+}
+
+
+button {
+
+    background-color: #2a9d8f;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+}
+
+
+button:hover {
+
+    background-color: #264653;
+
+}
